@@ -43,7 +43,7 @@ public class TestSistemasAplicacion{
 	
 	// Al finalizar el test se cierra el browser con el metodo quit()
 	@After
-	public void teardown() {
+	public static void teardown() {
 		if(driver1 != null) {
 			driver1.quit();
 		}

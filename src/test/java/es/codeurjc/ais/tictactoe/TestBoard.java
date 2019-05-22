@@ -108,7 +108,8 @@ public class TestBoard{
 		
 	}
 	
-	@Test void testJuegoEmpatado() {
+	@Test 
+	public void testJuegoEmpatado() {
 		
 		
 		//Simulamos una partida
