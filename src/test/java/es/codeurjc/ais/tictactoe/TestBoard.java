@@ -150,15 +150,10 @@ public class TestBoard{
 
 		tablero.getCell(7).value = jugadorDos.getLabel();
 
-		/* Hasta aqui no hay empate
-		 * 
-		 * Esta ultima posicion produce el empate
-		 * 
-		 * Jugador Uno -> Un X en la posicion 6
-		*/
+		// Jugador Uno -> Un X en la posicion8
 		
-		assertTrue(tablero.checkDraw());
-
+		tablero.getCell(8).value = jugadorUno.getLabel();
+		
 		// Ahora si seria un empate
 		
 		assertTrue(tablero.checkDraw());
