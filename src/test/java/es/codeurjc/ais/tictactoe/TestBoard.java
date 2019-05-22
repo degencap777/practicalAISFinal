@@ -116,8 +116,7 @@ public class TestBoard{
 		
 		//Simulamos una partida
 		
-		boolean esEmpate = tablero.checkDraw();
-		assertEquals(esEmpate, false);
+		assertFalse(tablero.checkDraw());
 		
 		//Jugador Uno -> Una X en la posicion 0
 		
@@ -158,8 +157,7 @@ public class TestBoard{
 		 * Jugador Uno -> Un X en la posicion 6
 		*/
 		
-		assertEquals(esEmpate, true);
-
+		assertTrue(tablero.checkDraw());
 
 		// Ahora si seria un empate
 		
