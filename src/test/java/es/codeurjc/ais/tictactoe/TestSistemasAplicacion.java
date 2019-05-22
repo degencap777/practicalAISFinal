@@ -50,7 +50,15 @@ public class TestSistemasAplicacion{
 		driver1.findElement(By.id("startBtn")).click();
 		driver2.findElement(By.id("startBtn")).click();
 		
-		esperarTablero();
+		WebDriverWait wait1 = new WebDriverWait(driver1, 20);
+		WebDriverWait wait2 = new WebDriverWait(driver2, 20);
+
+		// Esperamos a que se inicie el game
+		
+		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+
+		
 	}
 
 	// Al finalizar el test se cierra el browser con el metodo quit()
@@ -64,16 +72,6 @@ public class TestSistemasAplicacion{
 		}
 	}
 	
-	private void esperarTablero() {
-		WebDriverWait wait1 = new WebDriverWait(driver1, 20);
-		WebDriverWait wait2 = new WebDriverWait(driver2, 20);
-
-		// Esperamos a que se inicie el game
-		
-		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
-		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
-
-	}
 	// Localizamos los elementos en la pagina e interactuamos con ellos (click)
 	
 	@Test
@@ -115,10 +113,10 @@ public class TestSistemasAplicacion{
 		driver1.findElement(By.id("cell-5")).click();
 		driver2.findElement(By.id("cell-2")).click();
 		driver1.findElement(By.id("cell-6")).click();
-		driver2.findElement(By.id("cell-8")).click();
-		driver1.findElement(By.id("cell-7")).click();
+		driver2.findElement(By.id("cell-7")).click();
+		driver1.findElement(By.id("cell-8")).click();
 		
-		assertEquals(driver1.switchTo().alert().getText(), "Draw");
+		assertEquals(driver1.switchTo().alert().getText(), "Draw!");
 		assertEquals(driver2.switchTo().alert().getText(), "Draw!");
 	}
 }
