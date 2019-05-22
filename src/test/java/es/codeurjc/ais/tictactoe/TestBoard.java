@@ -99,11 +99,11 @@ public class TestBoard{
 		
 		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
 		
-		assertArrayEquals(posicion, tablero.getCellsIfWinner(jugadorUno.getLabel()));
+		assertArrayEquals(posicion, tablero.getCellsIfWinner(jugadorDos.getLabel()));
 		
 		//Comprobamos si el jugador uno no tiene la posicion ganadora
 		
-		assertNull(tablero.getCellsIfWinner(jugadorDos.getLabel()));
+		assertNull(tablero.getCellsIfWinner(jugadorUno.getLabel()));
 		
 		//Comprobamos que la partida no es un empate
 		
@@ -144,6 +144,10 @@ public class TestBoard{
 		// Jugador Uno -> Un X en la posicion 6
 		
 		tablero.getCell(6).value = jugadorUno.getLabel();
+
+		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
+
+		
 
 		//Comprobamos que ninguno ha ganado
 		
