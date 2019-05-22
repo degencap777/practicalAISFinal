@@ -22,14 +22,6 @@ public class TestSistemasAplicacion{
 	
 	WebDriver driver1, driver2;
 	
-	//LO ejecutamos antes de cada test
-	@Before
-	public void setup() {
-		driver1 = new ChromeDriver();
-		driver2 = new ChromeDriver();
-	}
-	//Lo ejecutamos una vez 
-
 	@BeforeClass
 	public static void setupClass() {
 		ChromeDriverManager.getInstance().setup();
@@ -37,13 +29,23 @@ public class TestSistemasAplicacion{
 	}
 	
 	@AfterClass
-	public void teardownClass() {
+	public static void teardownClass() {
 		WebApp.stop();
 	}
 	
+	//LO ejecutamos antes de cada test
+	@Before
+	public void setup() {
+		driver1 = new ChromeDriver();
+		driver2 = new ChromeDriver();
+	}
+
+
+	
+
 	// Al finalizar el test se cierra el browser con el metodo quit()
 	@After
-	public static void teardown() {
+	public void teardown() {
 		if(driver1 != null) {
 			driver1.quit();
 		}
