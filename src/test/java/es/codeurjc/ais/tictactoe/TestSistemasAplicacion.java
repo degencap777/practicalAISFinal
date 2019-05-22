@@ -44,14 +44,20 @@ public class TestSistemasAplicacion{
 		driver1.get("http://localhost:8080");
 		driver2.get("http://localhost:8080");
 		
+		WebDriverWait wait1 = new WebDriverWait(driver1, 20);
+		WebDriverWait wait2 = new WebDriverWait(driver2, 20);
+
+	
+		wait1.until(ExpectedConditions.elementToBeClickable(By.id("nickname")));
+		wait2.until(ExpectedConditions.elementToBeClickable(By.id("nickname")));
+		
 		driver1.findElement(By.id("nickname")).sendKeys("JugadorUno");
 		driver2.findElement(By.id("nickname")).sendKeys("JugadorDos");
 
 		driver1.findElement(By.id("startBtn")).click();
 		driver2.findElement(By.id("startBtn")).click();
 		
-		WebDriverWait wait1 = new WebDriverWait(driver1, 20);
-		WebDriverWait wait2 = new WebDriverWait(driver2, 20);
+
 
 		// Esperamos a que se inicie el game
 		
