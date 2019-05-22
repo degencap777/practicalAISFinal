@@ -144,15 +144,8 @@ public class TestBoard{
 		
 		tablero.getCell(6).value = jugadorUno.getLabel();
 
-		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
 
-		
 
-		//Comprobamos que ninguno ha ganado
-		
-		assertNull(tablero.getCellsIfWinner(jugadorUno.getLabel()));
-		assertNull(tablero.getCellsIfWinner(jugadorDos.getLabel()));
-		
 		//Comprobamos que la partida  es un empate
 		
 		assertTrue(tablero.checkDraw());	
