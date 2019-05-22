@@ -44,8 +44,8 @@ public class TestSistemasAplicacion{
 		driver1.get("http://localhost:8080");
 		driver2.get("http://localhost:8080");
 		
-		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
-		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+		driver1.findElement(By.id("nickname")).sendKeys("JugadorUno");
+		driver2.findElement(By.id("nickname")).sendKeys("JugadorDos");
 
 		driver1.findElement(By.id("startBtn")).click();
 		driver2.findElement(By.id("startBtn")).click();
@@ -84,7 +84,7 @@ public class TestSistemasAplicacion{
 		driver2.findElement(By.id("cell-4")).click();
 		driver1.findElement(By.id("cell-2")).click();
 
-		assertEquals(driver1.switchTo().alert().getText(), "Jugador Uno wins! Jugador Dos looses.");
+		assertEquals(driver1.switchTo().alert().getText(), "JugadorUno wins! JugadorDos looses.");
 
 	}
 	
@@ -99,7 +99,7 @@ public class TestSistemasAplicacion{
 		driver1.findElement(By.id("cell-6")).click();
 		driver2.findElement(By.id("cell-5")).click();
 
-		assertEquals(driver2.switchTo().alert().getText(), "Jugador Dos wins! Jugador Uno looses.");
+		assertEquals(driver2.switchTo().alert().getText(), "JugadorDos wins! JugadorUno looses.");
 
 	}
 	
