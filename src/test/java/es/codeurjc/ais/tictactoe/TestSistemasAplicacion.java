@@ -13,7 +13,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class TestSistemasAplicacion{
 
@@ -24,7 +25,7 @@ public class TestSistemasAplicacion{
 	
 	@BeforeClass
 	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();
+		WebDriverManager.firefoxdriver().setup();
 		WebApp.start();
 	}
 	
