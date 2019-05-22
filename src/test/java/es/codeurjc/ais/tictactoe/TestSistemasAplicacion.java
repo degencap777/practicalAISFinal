@@ -48,8 +48,9 @@ public class TestSistemasAplicacion{
 		WebDriverWait wait2 = new WebDriverWait(driver2, 20);
 
 	
-		wait1.until(ExpectedConditions.elementToBeClickable(By.id("nickname")));
-		wait2.until(ExpectedConditions.elementToBeClickable(By.id("nickname")));
+		// driver.switchTo.frame("frameName"); 
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.id("nickname")));
+		wait2.until(ExpectedConditions.visibilityOfElementLocated(By.id("nickname")));
 		
 		driver1.findElement(By.id("nickname")).sendKeys("JugadorUno");
 		driver2.findElement(By.id("nickname")).sendKeys("JugadorDos");
