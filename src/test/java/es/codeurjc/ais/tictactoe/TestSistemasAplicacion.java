@@ -1,7 +1,5 @@
 package es.codeurjc.ais.tictactoe;
 
-
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.After;
@@ -61,11 +59,10 @@ public class TestSistemasAplicacion{
 		driver2.get("http://localhost:8080");
 		
 		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
-		driver1.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
 
+		driver1.findElement(By.id("startBtn")).click();
 		driver2.findElement(By.id("startBtn")).click();
-		driver2.findElement(By.id("startBtn")).click();
-		
 		
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
@@ -84,9 +81,9 @@ public class TestSistemasAplicacion{
 		driver2.get("http://localhost:8080");
 		
 		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
-		driver1.findElement(By.id("startBtn")).click();
-		
 		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+
+		driver1.findElement(By.id("startBtn")).click();
 		driver2.findElement(By.id("startBtn")).click();
 		
 		
@@ -108,11 +105,10 @@ public class TestSistemasAplicacion{
 		driver2.get("http://localhost:8080");
 		
 		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
-		driver1.findElement(By.id("startBtn")).click();
-		
 		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+
+		driver1.findElement(By.id("startBtn")).click();
 		driver2.findElement(By.id("startBtn")).click();
-		
 		
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
@@ -124,13 +120,7 @@ public class TestSistemasAplicacion{
 		driver2.findElement(By.id("cell-8")).click();
 		driver1.findElement(By.id("cell-7")).click();
 		
-
 		assertEquals(driver1.switchTo().alert().getText(), "Draw");
 		assertEquals(driver2.switchTo().alert().getText(), "Draw!");
-
-
 	}
-	
-	
-	
 }
