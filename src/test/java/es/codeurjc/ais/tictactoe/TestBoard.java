@@ -29,23 +29,25 @@ public class TestBoard{
 		
 		
 		//Jugador Uno -> Una X en la posicion 0
+		
 		tablero.getCell(0).value = jugadorUno.getLabel();
 		
 		//Jugador Dos -> Un O en la posicion 3
+		
 		tablero.getCell(3).value = jugadorDos.getLabel();
 		
 		//Jugador Uno -> Un X en la posicion 1
+		
 		tablero.getCell(1).value = jugadorUno.getLabel();
 		
 		//Jugador Dos -> Un O en la posicion
+		
 		tablero.getCell(4).value = jugadorDos.getLabel();
 		
 		//Jugador Uno -> Un X en la posicion 2
+		
 		tablero.getCell(2).value = jugadorUno.getLabel();
 		
-	
-				
-
 		
 		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
 		
@@ -55,6 +57,7 @@ public class TestBoard{
 		assertArrayEquals(posicion, posicionJugadorUno);
 		
 		//Comprobamos si el jugador dos no tiene la posicion ganadora
+		
 		assertNull(posicionJugadorDos);
 		
 		//Comprobamos que la partida no es un empate
@@ -71,25 +74,29 @@ public class TestBoard{
 		int[] posicion = {1, 4, 7};
 		
 		//Jugador Uno -> Una X en la posicion 0
+		
 		tablero.getCell(0).value = jugadorUno.getLabel();
 		
-		//Jugador Dos -> Un O en la posicion 1
-		tablero.getCell(1).value = jugadorDos.getLabel();
+		//Jugador Dos -> Un O en la posicion 3
 		
-		//Jugador Uno -> Un X en la posicion 2
-		tablero.getCell(2).value = jugadorUno.getLabel();
+		tablero.getCell(3).value = jugadorDos.getLabel();
+		
+		//Jugador Uno -> Un X en la posicion 1
+		
+		tablero.getCell(1).value = jugadorUno.getLabel();
 		
 		//Jugador Dos -> Un O en la posicion 4
+		
 		tablero.getCell(4).value = jugadorDos.getLabel();
 		
-		//Jugador Uno -> Un X en la posicion 8
-		tablero.getCell(8).value = jugadorUno.getLabel();
+		//Jugador Uno -> Un X en la posicion 6
 		
-		//Jugador Dos -> Un O en la posicion 7
-		tablero.getCell(7).value = jugadorDos.getLabel();
-				
+		tablero.getCell(6).value = jugadorUno.getLabel();
+		
+		//Jugador Dos -> Un O en la posicion 5
+		
+		tablero.getCell(5).value = jugadorDos.getLabel();
 
-		
 
 		
 		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
@@ -115,24 +122,33 @@ public class TestBoard{
 		//Simulamos una partida
 		
 		//Jugador Uno -> Una X en la posicion 0
+		
 		tablero.getCell(0).value = jugadorUno.getLabel();
 		
-		//Jugador Dos -> Un O en la posicion 1
-		tablero.getCell(1).value = jugadorDos.getLabel();
+		//Jugador Dos -> Un O en la posicion 3
 		
-		//Jugador Uno -> Un X en la posicion 3
-		tablero.getCell(3).value = jugadorUno.getLabel();
+		tablero.getCell(3).value = jugadorDos.getLabel();
 		
-		//Jugador Dos -> Un O en la posicion 6
-		tablero.getCell(6).value = jugadorDos.getLabel();
+		//Jugador Uno -> Un X en la posicion 1
 		
-		//Jugador Uno -> Un X en la posicion 8
-		tablero.getCell(8).value = jugadorUno.getLabel();
+		tablero.getCell(1).value = jugadorUno.getLabel();
 		
-		//Jugador Dos -> Un O en la posicion 7
-		tablero.getCell(7).value = jugadorDos.getLabel();
+		//Jugador Dos -> Un O en la posicion 4
+		
+		tablero.getCell(4).value = jugadorDos.getLabel();
+		
+		//Jugador Uno -> Un X en la posicion 5
+		
+		tablero.getCell(5).value = jugadorUno.getLabel();
+		
+		//Jugador Dos -> Un O en la posicion 2
+		
+		tablero.getCell(2).value = jugadorDos.getLabel();
 				
+		// Jugador Uno -> Un X en la posicion 6
 		
+		tablero.getCell(6).value = jugadorUno.getLabel();
+
 		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
 		
 		int[] posicionJugadorUno = tablero.getCellsIfWinner(jugadorUno.getLabel());
