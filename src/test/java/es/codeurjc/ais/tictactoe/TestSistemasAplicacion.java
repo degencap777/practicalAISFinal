@@ -10,6 +10,8 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -35,8 +37,19 @@ public class TestSistemasAplicacion{
 	//LO ejecutamos antes de cada test
 	@Before
 	public void setup() {
+		
 		driver1 = new FirefoxDriver();
 		driver2 = new FirefoxDriver();
+		
+		driver1.get("http://localhost:8080");
+		driver2.get("http://localhost:8080");
+		
+		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
+		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+
+		driver1.findElement(By.id("startBtn")).click();
+		driver2.findElement(By.id("startBtn")).click();
+		
 	}
 
 	// Al finalizar el test se cierra el browser con el metodo quit()
@@ -55,15 +68,14 @@ public class TestSistemasAplicacion{
 	@Test
 	public void testJugadorUnoWinner() throws InterruptedException{
 		
-		driver1.get("http://localhost:8080");
-		driver2.get("http://localhost:8080");
-		
-		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
-		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+		WebDriverWait wait1 = new WebDriverWait(driver1, 100);
+		WebDriverWait wait2 = new WebDriverWait(driver2, 100);
 
-		driver1.findElement(By.id("startBtn")).click();
-		driver2.findElement(By.id("startBtn")).click();
+		// Esperamos a que se introduzca el nickname
 		
+		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
 		driver1.findElement(By.id("cell-1")).click();
@@ -76,17 +88,15 @@ public class TestSistemasAplicacion{
 	
 	@Test
 	public void testJugadorDosWinner() throws InterruptedException{
-		
-		driver1.get("http://localhost:8080");
-		driver2.get("http://localhost:8080");
-		
-		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
-		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+	
+		WebDriverWait wait1 = new WebDriverWait(driver1, 100);
+		WebDriverWait wait2 = new WebDriverWait(driver2, 100);
 
-		driver1.findElement(By.id("startBtn")).click();
-		driver2.findElement(By.id("startBtn")).click();
+		// Esperamos a que se introduzca el nickname
 		
-		
+		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
 		driver1.findElement(By.id("cell-1")).click();
@@ -101,15 +111,14 @@ public class TestSistemasAplicacion{
 	@Test
 	public void testPartidaEmpatada() throws InterruptedException{
 		
-		driver1.get("http://localhost:8080");
-		driver2.get("http://localhost:8080");
-		
-		driver1.findElement(By.id("nickname")).sendKeys("Jugador Uno");
-		driver2.findElement(By.id("nickname")).sendKeys("Jugador Dos");
+		WebDriverWait wait1 = new WebDriverWait(driver1, 100);
+		WebDriverWait wait2 = new WebDriverWait(driver2, 100);
 
-		driver1.findElement(By.id("startBtn")).click();
-		driver2.findElement(By.id("startBtn")).click();
+		// Esperamos a que se introduzca el nickname
 		
+		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
 		driver1.findElement(By.id("cell-1")).click();
