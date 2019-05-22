@@ -50,6 +50,7 @@ public class TestSistemasAplicacion{
 		driver1.findElement(By.id("startBtn")).click();
 		driver2.findElement(By.id("startBtn")).click();
 		
+		esperarTablero();
 	}
 
 	// Al finalizar el test se cierra el browser con el metodo quit()
@@ -63,19 +64,22 @@ public class TestSistemasAplicacion{
 		}
 	}
 	
+	private void esperarTablero() {
+		WebDriverWait wait1 = new WebDriverWait(driver1, 20);
+		WebDriverWait wait2 = new WebDriverWait(driver2, 20);
+
+		// Esperamos a que se inicie el game
+		
+		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
+
+	}
 	// Localizamos los elementos en la pagina e interactuamos con ellos (click)
 	
 	@Test
 	public void testJugadorUnoWinner() throws InterruptedException{
 		
-		WebDriverWait wait1 = new WebDriverWait(driver1, 100);
-		WebDriverWait wait2 = new WebDriverWait(driver2, 100);
-
-		// Esperamos a que se introduzca el nickname
 		
-		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
-		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
-
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
 		driver1.findElement(By.id("cell-1")).click();
@@ -89,13 +93,6 @@ public class TestSistemasAplicacion{
 	@Test
 	public void testJugadorDosWinner() throws InterruptedException{
 	
-		WebDriverWait wait1 = new WebDriverWait(driver1, 100);
-		WebDriverWait wait2 = new WebDriverWait(driver2, 100);
-
-		// Esperamos a que se introduzca el nickname
-		
-		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
-		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
 
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
@@ -111,14 +108,6 @@ public class TestSistemasAplicacion{
 	@Test
 	public void testPartidaEmpatada() throws InterruptedException{
 		
-		WebDriverWait wait1 = new WebDriverWait(driver1, 100);
-		WebDriverWait wait2 = new WebDriverWait(driver2, 100);
-
-		// Esperamos a que se introduzca el nickname
-		
-		wait1.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
-		wait2.until(ExpectedConditions.elementToBeClickable(By.id("cell-0")));
-
 		driver1.findElement(By.id("cell-0")).click();
 		driver2.findElement(By.id("cell-3")).click();
 		driver1.findElement(By.id("cell-1")).click();
