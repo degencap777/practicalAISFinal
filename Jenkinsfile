@@ -10,19 +10,7 @@ node {
       // **       in the global configuration.           
       mvnHome = tool 'M3'
    }
-   stage('Build') {
-      // Run the maven build
-      // Compilamos
-      env.JAVA_HOME = "${tool 'JDK8'}"
-      env.PATH="${env.JAVA_HOME}/bin:${env.PATH}"
-      withEnv(["MVN_HOME=$mvnHome"]) {
-         if (isUnix()) {
-            sh '"$MVN_HOME/bin/mvn" -Dmaven.test.failure.ignore clean package'
-         } else {
-            bat(/"%MVN_HOME%\bin\mvn" -Dmaven.test.failure.ignore clean package/)
-         }
-      }
-   }
+ 
 
    stage('Create jar'){
    	steps{
@@ -32,7 +20,7 @@ node {
 
    stage('Start app'){
    	steps{
-   		sh "cd a.gonzalezgarz/target; java -jar a.gonzalezgarz-0.0.1-SNAPSHOT.jar > out.log & echo \$! > pid"
+   		sh "cd a.gonzalezgarz/target;java -jar a.gonzalezgarz-0.0.1-SNAPSHOT.jar > out.log & echo \$! > pid"
    	}
    }
    stage('Test') {
