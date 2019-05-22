@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3 col-sm-offset-3 scoreBoard">
+				<h1>
+					<span id="p1Score"></span>
+				</h1>
+			</div>
+			<div class="col-sm-3 scoreBoard">
+				<h1 class="text-right">
+					<span id="p2Score"></span>
+				</h1>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-sm-offset-3" id="joinForm">
+				<h1 class="text-center colorDark">Enter your name</h1>
+				<div class="panel panel-danger">
+					<div class="panel-body">
+						<div class="input-group">
+							<input class="form-control input-lg" id="nickname"
+								autofocus="autofocus" /><span class="input-group-btn">
+								<button class="btn btn-lg btn-danger" id="startBtn">PLAY!</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-6 col-sm-offset-3" id="gameBoard"></div>
+		</div>
+	</div>
+
+	<script src="/js/Board.js"></script>
+	<script src="/js/app.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lato Regular'), local('Lato-Regular'), url(Lato.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Quicksand'), local('Quicksand'), url(Quicksand.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+::selection {
+    background: transparent;
+}
+
+body {
+    background: #A5DAD2;
+    font-family: Quicksand, san-serif;
+}
+
+.bgWhite {
+    background: #F5F2F5;
+}
+
+.colorWhite {
+    color: #F5F2F5 !important;
+}
+
+.bgDark {
+    background: #516D66;
+}
+
+.colorDark {
+    color: #516D66;
+}
+
+.bgRed {
+    background: #F286A0;
+}
+
+.colorRed {
+    color: #F286A0 !important;
+}
+
+.gameBoard, .scoreBoard {
+    font-weight: 400;
+}
+
+.gameBoard {
+    width: 100%;
+}
+
+.gameBoard td {
+    text-align: center;
+    color: #516D66;
+    font-size: 8em;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.gameCell {
+    width: 181px;
+    height: 181px;
+}
+
+.gameCell:not(.marked):hover {
+    box-shadow: 0 0 42px #555;
+}
+
+.gameBoard td.gameCell.notActive:hover, .gameBoard td.gameCell.notActive:active {
+    box-shadow: none !important;
+    cursor: default;
+}
+
+.scoreBoard {
+    color: #516D66;
+    height: 100px;
+}
+
+.boardCol {
+    width: 5px;
+    cursor: default !important;
+}
+
+.boardRow {
+    height: 5px;
+    cursor: default !important;
+}
+
+.scoreBoard span.active {
+    border-bottom: 4px solid #F286A0;
+}
