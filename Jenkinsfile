@@ -1,15 +1,26 @@
-node {
-   def mvnHome
-   stage('Preparation') { // for display purposes
+pipeline {
+ 	tools{
+ 		maven "M3"
+ 	}
+ 	agent any 
+ 	stages{
+ 		
+ 		 stage('Preparation') { // for display purposes
       // Aqui copiamos el codigo de github
 
       // Get some code from a GitHub repository
-      git 'https://github.com/agonzalezgarz/PracticaAISFinal.git'
+      		steps{
+      		git 'https://github.com/agonzalezgarz/PracticaAISFinal.git'
+      		}
       // Get the Maven tool.
       // ** NOTE: This 'M3' Maven tool must be configured
       // **       in the global configuration.           
-      mvnHome = tool 'M3'
-   }
+     	 mvnHome = tool 'M3'
+   		}
+
+
+ 	}
+  
  
 
    stage('Create jar'){
@@ -22,12 +33,13 @@ node {
    	steps{
    		sh "cd a.gonzalezgarz/target;java -jar a.gonzalezgarz-0.0.1-SNAPSHOT.jar > out.log & echo \$! > pid"
    	}
-   }
+
    stage('Test') {
    	steps{
    		sh "cd a.gonzalezgarz ; mvn test"
    	}
    }
+}
    
    post {
    	always{
