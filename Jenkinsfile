@@ -23,9 +23,34 @@ node {
          }
       }
    }
-   stage('Results') {
-      // Resultados del test
-      junit '**/target/surefire-reports/TEST-*.xml'
-      archiveArtifacts 'target/*.jar'
+
+   stage('Create jar'){
+   	steps{
+   		sh "cd a.gonzalezgarz ; mvn package -DskipTests"
+   	}
    }
+
+   stage('Start app'){
+   	steps{
+   		sh "cd a.gonzalezgarz/target; java -jar a.gonzalezgarz-0.0.1-SNAPSHOT.jar > out.log & echo \$! > pid"
+   	}
+   }
+   stage('Test') {
+   	steps{
+   		sh "cd a.gonzalezgarz ; mvn test"
+   	}
+   }
+   
+   post {
+   	always{
+   		junit "a.gonzalezgarz/**/target/surefire-reports/TEST-*-xml"
+   		sh "kill \$(cat a.gonzalezgarz/target/pid)"
+   		archive "a.gonzalezgarz/target/out.log"
+   	}
+   	sucess{
+   		archive "a.gonzalezgarz/target/*.jar"
+   	}
+   }
+   
+
 }
