@@ -69,7 +69,7 @@ public class TestBoard{
 		
 		// Posicion ganadora esperada
 		
-		int[] posicion = {1, 4, 7};
+		int[] posicion = {3, 4, 5};
 		
 		//Jugador Uno -> Una X en la posicion 0
 		
@@ -93,9 +93,8 @@ public class TestBoard{
 		
 		//Jugador Dos -> Un O en la posicion 5
 		
-		tablero.getCell(5).value = jugadorDos.getLabel();
-
-
+		tablero.getCell(5).value = jugadorDos.getLabel();	
+		
 		
 		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
 		
