@@ -85,6 +85,7 @@ public class TestSistemasAplicacion{
 		driver1.findElement(By.id("cell-2")).click();
 
 		assertEquals(driver1.switchTo().alert().getText(), "JugadorUno wins! JugadorDos looses.");
+		assertEquals(driver2.switchTo().alert().getText(), "JugadorUno wins! JugadorDos looses.");
 
 	}
 	
@@ -100,6 +101,7 @@ public class TestSistemasAplicacion{
 		driver2.findElement(By.id("cell-5")).click();
 
 		assertEquals(driver2.switchTo().alert().getText(), "JugadorDos wins! JugadorUno looses.");
+		assertEquals(driver1.switchTo().alert().getText(), "JugadorDos wins! JugadorUno looses.");
 
 	}
 	
