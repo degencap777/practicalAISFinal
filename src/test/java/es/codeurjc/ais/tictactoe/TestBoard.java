@@ -116,8 +116,8 @@ public class TestBoard{
 		
 		//Simulamos una partida
 		
-		boolean noEsEmpate = tablero.checkDraw();
-		assertEquals(noEsEmpate, false);
+		boolean esEmpate = tablero.checkDraw();
+		assertEquals(esEmpate, false);
 		
 		//Jugador Uno -> Una X en la posicion 0
 		
@@ -142,9 +142,15 @@ public class TestBoard{
 		//Jugador Dos -> Un O en la posicion 2
 		
 		tablero.getCell(2).value = jugadorDos.getLabel();
-				
-		assertFalse(tablero.checkDraw());
+			
+		//Jugador Uno -> Un X en la posicion 6
+
+		tablero.getCell(6).value = jugadorUno.getLabel();
 		
+		//Jugador Dos -> Un O en la posicion 7
+
+		tablero.getCell(7).value = jugadorDos.getLabel();
+
 		/* Hasta aqui no hay empate
 		 * 
 		 * Esta ultima posicion produce el empate
@@ -152,7 +158,8 @@ public class TestBoard{
 		 * Jugador Uno -> Un X en la posicion 6
 		*/
 		
-		tablero.getCell(6).value = jugadorUno.getLabel();
+		assertEquals(esEmpate, true);
+
 
 		// Ahora si seria un empate
 		
