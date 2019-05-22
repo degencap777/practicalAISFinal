@@ -62,7 +62,7 @@ public class TestTicTacToeGame{
 		reset(conexionUno);
 		reset(conexionDos);
 
-	// AHora añadimos al jugador 2 y comprobamos que las conexiones reciben el evento JOIN_GAME
+	// Ahora añadimos al jugador 2 y comprobamos que las conexiones reciben el evento JOIN_GAME
 	
 		game.addPlayer(jugadorDos);
 			

@@ -5,6 +5,6 @@ Built-By: Isabel
 Implementation-Vendor-Id: es.codeurjc.ais
 Build-Jdk: 1.8.0_191
 Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
- ot-starter-parent/ArianaGonzalezGarzon
+ ot-starter-parent/a.gonzalezgarz
 Created-By: Maven Integration for Eclipse
 

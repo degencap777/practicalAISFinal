@@ -156,6 +156,10 @@ public class TestBoard{
 		
 		// Ahora si seria un empate
 		
+		assertNull(tablero.getCellsIfWinner(jugadorUno.getLabel()));
+		
+		assertNull(tablero.getCellsIfWinner(jugadorDos.getLabel()));
+		
 		assertTrue(tablero.checkDraw());
 		
 	}
