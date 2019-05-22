@@ -20,7 +20,7 @@ public class TestSistemasAplicacion{
 	// Creamos el objeto WebDriver especifico para el navegador
 	// que queramos utilizar
 	
-	WebDriver driver1, driver2;
+	protected WebDriver driver1, driver2;
 	
 	@BeforeClass
 	public static void setupClass() {
@@ -39,9 +39,6 @@ public class TestSistemasAplicacion{
 		driver1 = new ChromeDriver();
 		driver2 = new ChromeDriver();
 	}
-
-
-	
 
 	// Al finalizar el test se cierra el browser con el metodo quit()
 	@After
