@@ -143,15 +143,20 @@ public class TestBoard{
 		
 		tablero.getCell(2).value = jugadorDos.getLabel();
 				
-		// Jugador Uno -> Un X en la posicion 6
+		assertFalse(tablero.checkDraw());
+		
+		/* Hasta aqui no hay empate
+		 * 
+		 * Esta ultima posicion produce el empate
+		 * 
+		 * Jugador Uno -> Un X en la posicion 6
+		*/
 		
 		tablero.getCell(6).value = jugadorUno.getLabel();
 
-
-		//Comprobamos que la partida  es un empate
+		// Ahora si seria un empate
 		
-		boolean esEmpate = tablero.checkDraw();
-		assertEquals(esEmpate, true);
+		assertTrue(tablero.checkDraw());
 		
 	}
 }
