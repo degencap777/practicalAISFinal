@@ -9,12 +9,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.ChromeDriverManager;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -27,7 +25,7 @@ public class TestSistemasAplicacion{
 	
 	@BeforeClass
 	public static void setupClass() {
-		ChromeDriverManager.getInstance().setup();
+		WebDriverManager.firefoxdriver().setup();		
 		WebApp.start();
 	}
 	
@@ -40,8 +38,8 @@ public class TestSistemasAplicacion{
 	@Before
 	public void setup() {
 		
-		driver1 = new ChromeDriver();
-		driver2 = new ChromeDriver();
+		driver1 = new FirefoxDriver();
+		driver2 = new FirefoxDriver();
 		
 		WebDriverWait wait1 = new WebDriverWait(driver1, 50);
 		WebDriverWait wait2 = new WebDriverWait(driver2, 50);
