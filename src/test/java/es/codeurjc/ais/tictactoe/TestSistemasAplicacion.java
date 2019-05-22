@@ -11,7 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.ChromeDriverManager;
 
@@ -36,8 +36,8 @@ public class TestSistemasAplicacion{
 	//LO ejecutamos antes de cada test
 	@Before
 	public void setup() {
-		driver1 = new ChromeDriver();
-		driver2 = new ChromeDriver();
+		driver1 = new FirefoxDriver();
+		driver2 = new FirefoxDriver();
 	}
 
 	// Al finalizar el test se cierra el browser con el metodo quit()
