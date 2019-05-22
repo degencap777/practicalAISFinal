@@ -8,9 +8,11 @@ import org.junit.Test;
 public class TestBoard{
 		
 	// Crear tablero 
+	
 	 Board tablero = new Board();
 		
 	// Creamos jugadores
+	 
 	Player jugadorUno = new Player(1, "x", "Jugador Uno");
 	Player jugadorDos = new Player(2, "o", "Jugador Dos");
 		
@@ -24,9 +26,7 @@ public class TestBoard{
 		
 		int[] posicion = {0, 1, 2};
 		
-		// {0, 1, 2} es una posicion ganadora
-		// {1, 4, 7} es una posicion ganadora
-		
+		// {0, 1, 2} es una posicion ganadora		
 		
 		//Jugador Uno -> Una X en la posicion 0
 		
@@ -51,16 +51,14 @@ public class TestBoard{
 		
 		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
 		
-		int[] posicionJugadorUno = tablero.getCellsIfWinner(jugadorUno.getLabel());
-		int[] posicionJugadorDos = tablero.getCellsIfWinner(jugadorDos.getLabel());
-		
-		assertArrayEquals(posicion, posicionJugadorUno);
+		assertArrayEquals(posicion, tablero.getCellsIfWinner(jugadorUno.getLabel()));
 		
 		//Comprobamos si el jugador dos no tiene la posicion ganadora
 		
-		assertNull(posicionJugadorDos);
+		assertNull(tablero.getCellsIfWinner(jugadorDos.getLabel()));
 		
 		//Comprobamos que la partida no es un empate
+		
 		assertEquals(false, tablero.checkDraw());		
 	}
 	
@@ -101,16 +99,14 @@ public class TestBoard{
 		
 		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
 		
-		int[] posicionJugadorUno = tablero.getCellsIfWinner(jugadorUno.getLabel());
-		int[] posicionJugadorDos = tablero.getCellsIfWinner(jugadorDos.getLabel());
-		
-		
-		assertArrayEquals(posicion, posicionJugadorDos);
+		assertArrayEquals(posicion, tablero.getCellsIfWinner(jugadorUno.getLabel()));
 		
 		//Comprobamos si el jugador uno no tiene la posicion ganadora
-		assertNull(posicionJugadorUno);
+		
+		assertNull(tablero.getCellsIfWinner(jugadorDos.getLabel()));
 		
 		//Comprobamos que la partida no es un empate
+		
 		assertEquals(false, tablero.checkDraw());	
 		
 	}
@@ -149,19 +145,13 @@ public class TestBoard{
 		
 		tablero.getCell(6).value = jugadorUno.getLabel();
 
-		// Comprobamos que la posicion ganadora esperada es igual a la obtenida
-		
-		int[] posicionJugadorUno = tablero.getCellsIfWinner(jugadorUno.getLabel());
-		int[] posicionJugadorDos = tablero.getCellsIfWinner(jugadorDos.getLabel());
-		
-		
-
 		//Comprobamos que ninguno ha ganado
 		
-		assertNull(posicionJugadorUno);
-		assertNull(posicionJugadorDos);
+		assertNull(tablero.getCellsIfWinner(jugadorUno.getLabel()));
+		assertNull(tablero.getCellsIfWinner(jugadorDos.getLabel()));
 		
 		//Comprobamos que la partida  es un empate
+		
 		assertTrue(tablero.checkDraw());	
 		
 	}
